@@ -1,0 +1,15 @@
+image: node:latest
+
+before_script:
+    - gem install dpl
+
+stages:
+    - deploy
+
+deploy-prod:
+    stage: deploy
+    image: node:latest
+    script:
+        - dpl --provider=heroku --app=$HEROKU_APP_PROD --api-key=$HEROKU_API_KEY
+    only:
+        - master

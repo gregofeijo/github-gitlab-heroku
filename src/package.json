@@ -1,0 +1,27 @@
+{
+    "name": "heroku-gitlab",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "engines": {
+        "node": "11.10.0",
+        "npm": "6.7.0"
+    },
+    "scripts": {
+        "start": "node app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com:gregofeijo/node-js-express-example.git"
+    },
+    "author": "Greg",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/gregofeijo/node-js-express-example/issues"
+    },
+    "homepage": "https://github.com/gregofeijo/node-js-express-example#readme",
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}
