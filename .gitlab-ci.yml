@@ -1,8 +1,8 @@
 image: node:latest
 
 variables:
-    $HEROKU_APP_DEV: 'github-gitlab-heroku'
-    $HEROKU_APIKEY: '24109554-5cbe-4b12-aceb-f0b90ab788ee'
+    HEROKU_APP_DEV: 'github-gitlab-heroku'
+    HEROKU_APIKEY: '24109554-5cbe-4b12-aceb-f0b90ab788ee'
 
 before_script:
     - gem install dpl
@@ -13,7 +13,7 @@ stages:
 deploy-prod:
     stage: deploy
     image: node:latest
-    script: 
+    script:
         - cd src
         - dpl --provider=heroku --app=$HEROKU_APP_PROD --api-key=$HEROKU_APIKEY
     only:
