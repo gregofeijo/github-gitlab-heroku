@@ -1,8 +1,8 @@
 image: alpine
 
-variables:
-    HEROKU_APP_DEV: 'github-gitlab-heroku'
-    HEROKU_APIKEY: '24109554-5cbe-4b12-aceb-f0b90ab788ee'
+#variables:
+    #HEROKU_APP_DEV: 'github-gitlab-heroku'
+    #HEROKU_APIKEY: '24109554-5cbe-4b12-aceb-f0b90ab788ee'
 
 before_script:
     - apk add nodejs
@@ -21,7 +21,6 @@ deploy-prod:
     image: alpine
     script: 
         - cd src
-        - echo dpl --provider=heroku --app=$HEROKU_APP_DEV --api-key=$HEROKU_APIKEY
         - dpl --provider=heroku --app=$HEROKU_APP_DEV --api-key=$HEROKU_APIKEY
     only:
         - master
