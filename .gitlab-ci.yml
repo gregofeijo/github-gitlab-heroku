@@ -1,12 +1,17 @@
-image: node:latest
+image: alpine
 
 variables:
     HEROKU_APP_DEV: 'github-gitlab-heroku'
     HEROKU_APIKEY: '24109554-5cbe-4b12-aceb-f0b90ab788ee'
 
 before_script:
-    - apt-get install ruby-dev
+    - apk add nodejs
+    - apk add npm
+    - apk add ruby-dev
+    - apk add git 
+    - apk add curl
     - gem install dpl
+    - gem install json_pure
 
 stages:
     - deploy
@@ -19,5 +24,3 @@ deploy-prod:
         - dpl --provider=heroku --app=$HEROKU_APP_PROD --api-key=$HEROKU_APIKEY
     only:
         - master
-
-#dpl --provider=heroku --app='github-gitlab-heroku' --api-key='24109554-5cbe-4b12-aceb-f0b90ab788ee'
