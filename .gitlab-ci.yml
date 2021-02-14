@@ -18,7 +18,7 @@ stages:
 
 deploy-prod:
     stage: deploy
-    image: node:latest
+    image: alpine
     script: 
         - cd src
         - dpl --provider=heroku --app=$HEROKU_APP_PROD --api-key=$HEROKU_APIKEY
