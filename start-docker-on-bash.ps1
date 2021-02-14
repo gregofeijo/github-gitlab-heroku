@@ -1,4 +1,4 @@
 $ErrorActionPreference = "Stop"
 
-docker build . -t alpine-node
-docker run -ti --rm alpine-node
+docker build . -t alpine-heroku-deploy
+docker run -ti --rm alpine-heroku-deploy

@@ -1,18 +1,26 @@
-image: alpine-node:14
+image: alpine
 
-before_script:
-    - apk add ruby-dev
-    - apk add git 
-    - apk add curl
-    - gem install dpl
-    - gem install json_pure
+#before_script:
+#    - apk add nodejs
+#    - apk add npm
+#    - apk add ruby-dev
+#    - apk add git 
+#    - apk add curl
+#    - gem install dpl
+#    - gem install json_pure
 
 stages:
     - deploy
 
 deploy-prod:
     stage: deploy
-    image: alpine-node:14
+    image: alpine
+    before_script:
+        - apk add ruby-dev
+        - apk add git 
+        - apk add curl
+        - gem install dpl
+        - gem install json_pure
     script: 
         - cd src
         - dpl --provider=heroku --app=$HEROKU_APP_DEV --api-key=$HEROKU_APIKEY
