@@ -21,6 +21,7 @@ deploy-prod:
     image: alpine
     script: 
         - cd src
+        - echo dpl --provider=heroku --app='$HEROKU_APP_DEV' --api-key=$HEROKU_APIKEY
         - dpl --provider=heroku --app='$HEROKU_APP_DEV' --api-key=$HEROKU_APIKEY
     only:
         - master
