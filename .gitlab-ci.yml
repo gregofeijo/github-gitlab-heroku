@@ -5,7 +5,7 @@ variables:
     HEROKU_APIKEY: '24109554-5cbe-4b12-aceb-f0b90ab788ee'
 
 before_script:
-    - gem install dpl
+    - apt-get install dpl
 
 stages:
     - deploy
